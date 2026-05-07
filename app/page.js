@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react";
 import { useState } from "react";
 import HeroHorseScene from "./components/HeroHorseScene";
 
-const heroPhoto = "/images/urun-at-heykel.png";
+const heroPhoto = "/images/hero-at-vitrin.png";
 
 const categories = [
   {

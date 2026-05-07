@@ -722,8 +722,19 @@ h1 {
   .cursor-trail {
     display: none;
   }
+  .navbar {
+    top: 0.55rem;
+    width: 96%;
+    padding: 0.65rem 0.8rem;
+    border-radius: 12px;
+  }
+  .logo {
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    white-space: nowrap;
+  }
   .hero {
-    min-height: 620px;
+    min-height: 88svh;
   }
   .hero-layer,
   .particles {
@@ -743,7 +754,69 @@ h1 {
     animation-duration: 30s;
   }
   .nav-links {
+    display: flex;
+    gap: 0.7rem;
+    overflow-x: auto;
+    max-width: 62%;
+    padding-bottom: 0.1rem;
+    scrollbar-width: none;
+  }
+  .nav-links::-webkit-scrollbar {
     display: none;
+  }
+  .nav-links a {
+    white-space: nowrap;
+    font-size: 0.78rem;
+    opacity: 0.9;
+  }
+  .hero-content {
+    padding: 1.1rem 0.9rem;
+    max-width: 94%;
+  }
+  .hero-sub {
+    letter-spacing: 0.2em;
+    font-size: 0.75rem;
+  }
+  .hero-content p {
+    font-size: 0.95rem;
+    line-height: 1.55;
+  }
+  .cta {
+    padding: 0.72rem 1.05rem;
+    font-size: 0.88rem;
+  }
+  .section {
+    width: min(1200px, 92%);
+    padding: 4.2rem 0;
+  }
+  .product-card {
+    gap: 0.2rem;
+    perspective: none;
+    transform: none !important;
+  }
+  .product-card::before {
+    display: none;
+  }
+  .flip-inner {
+    height: 220px;
+    transform: none !important;
+    transition: box-shadow 0.3s ease;
+  }
+  .product-card:hover .flip-inner {
+    transform: none !important;
+    box-shadow: 0 14px 24px rgba(0, 0, 0, 0.16);
+  }
+  .flip-back {
+    display: none;
+  }
+  .flip-front {
+    position: relative;
+    transform: none !important;
+  }
+  .flip-front i,
+  .flip-front h3,
+  .badge {
+    transform: none;
   }
   .product-grid,
   .reviews-grid {
@@ -757,7 +830,30 @@ h1 {
   .reviews-grid {
     grid-template-columns: 1fr;
   }
+  .hero {
+    min-height: 84svh;
+  }
+  .hero-emblem {
+    width: 62px;
+    height: 62px;
+    font-size: 1.1rem;
+  }
+  .flip-inner {
+    height: 205px;
+  }
+  .product-meta {
+    padding: 0.68rem 0.72rem;
+  }
+  .product-meta h3 {
+    font-size: 0.95rem;
+  }
+  .product-meta p {
+    font-size: 0.83rem;
+  }
+  .showcase-track {
+    grid-auto-columns: minmax(180px, 1fr);
+  }
   .section {
-    padding: 4.8rem 0;
+    padding: 3.7rem 0;
   }
 }

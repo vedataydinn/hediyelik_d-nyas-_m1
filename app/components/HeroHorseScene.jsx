@@ -2,9 +2,9 @@
 
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Environment, Float, PerspectiveCamera } from "@react-three/drei";
-import { useMemo, useRef } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 
-function RunningHorse({ scrollProgress = 0 }) {
+function RunningHorse({ scrollProgress = 0, isMobile = false }) {
   const groupRef = useRef(null);
   const legs = useRef([]);
 
@@ -27,7 +27,7 @@ function RunningHorse({ scrollProgress = 0 }) {
   });
 
   return (
-    <group ref={groupRef} position={[0, -0.4, 0]} scale={1.05}>
+    <group ref={groupRef} position={[0, isMobile ? -0.22 : -0.4, 0]} scale={isMobile ? 0.9 : 1.05}>
       <mesh castShadow position={[0, 0.5, 0]}>
         <boxGeometry args={[2.2, 0.85, 0.7]} />
         <meshStandardMaterial color="#9a5d2d" metalness={0.2} roughness={0.35} />
@@ -70,10 +70,24 @@ function RunningHorse({ scrollProgress = 0 }) {
 }
 
 export default function HeroHorseScene({ scrollProgress = 0 }) {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const media = window.matchMedia("(max-width: 900px)");
+    const onChange = () => setIsMobile(media.matches);
+    onChange();
+    media.addEventListener("change", onChange);
+    return () => media.removeEventListener("change", onChange);
+  }, []);
+
   return (
     <div className="horse-scene-wrap" aria-hidden="true">
       <Canvas shadows dpr={[1, 1.5]}>
-        <PerspectiveCamera makeDefault position={[0, 1.2, 5]} fov={45} />
+        <PerspectiveCamera
+          makeDefault
+          position={isMobile ? [0, 1.35, 5.9] : [0, 1.2, 5]}
+          fov={isMobile ? 52 : 45}
+        />
         <ambientLight intensity={0.5} />
         <directionalLight
           castShadow
@@ -83,8 +97,8 @@ export default function HeroHorseScene({ scrollProgress = 0 }) {
           shadow-mapSize-width={1024}
           shadow-mapSize-height={1024}
         />
-        <Float speed={1.5} rotationIntensity={0.3} floatIntensity={0.4}>
-          <RunningHorse scrollProgress={scrollProgress} />
+        <Float speed={isMobile ? 1.2 : 1.5} rotationIntensity={0.3} floatIntensity={0.4}>
+          <RunningHorse scrollProgress={scrollProgress} isMobile={isMobile} />
         </Float>
         <mesh receiveShadow rotation={[-Math.PI / 2, 0, 0]} position={[0, -1.05, 0]}>
           <planeGeometry args={[20, 20]} />

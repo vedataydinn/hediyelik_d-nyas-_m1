@@ -1,27 +1,27 @@
 import "./globals.css";
 
 export const metadata = {
-  metadataBase: new URL("https://hediyelikdunyasi-van.example"),
-  title: "HEDİYELİK DÜNYASI | Van Hediyelik Eşya",
+  metadataBase: new URL("https://myflowersantalya.example"),
+  title: "MyFlowers Antalya | Flower Delivery & Gift Shop",
   description:
-    "Van'da hediyelik eşya, el yapımı ürünler, Van kedisi figürleri ve otantik armağanlar için HEDİYELİK DÜNYASI.",
+    "MyFlowers Antalya ile aynı gün çiçek teslimatı, premium buket tasarımları ve hediye setleri.",
   keywords: [
-    "Van hediyelik eşya",
-    "Hediyelik Dünyası",
-    "Van souvenir shop",
-    "Van kedisi figürü",
-    "Van otlu peyniri",
+    "MyFlowers Antalya",
+    "Antalya çiçekçi",
+    "flower delivery antalya",
+    "gift shop antalya",
+    "aynı gün çiçek teslimatı",
   ],
   openGraph: {
-    title: "HEDİYELİK DÜNYASI",
-    description: "Van'ın kalbinde premium hediyelik eşya deneyimi.",
+    title: "MyFlowers Antalya",
+    description: "Antalya'da modern çiçek tasarımları ve premium hediye deneyimi.",
     type: "website",
     locale: "tr_TR",
   },
   twitter: {
     card: "summary_large_image",
-    title: "HEDİYELİK DÜNYASI",
-    description: "Van'da özel hediyelik eşya koleksiyonu.",
+    title: "MyFlowers Antalya",
+    description: "Antalya'da çiçek teslimatı ve premium hediye setleri.",
   },
 };
 
